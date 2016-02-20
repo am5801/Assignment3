@@ -22,11 +22,7 @@ body {
   background: #232323;
 }
 div {
-  height: 300px;
-  background-size: cover;
-  position: relative;
-  margin: 40px 0 0 0;
-  width: 800px;
+
 }
 h1 {
   font-family: 'Londrina Shadow', cursive;
@@ -85,17 +81,29 @@ small {
 .show-description small {
   opacity: 1;
 }
-.Dartmouth {
+#Dartmouth {
   background-image: url("http://www.dartmouth.edu/~cogedlab/images/panorama.jpg");
+  height: 300px;
   background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  width: 800px;
 }
-.CUSP {
-  background-image: url("https://c2.staticflickr.com/8/7040/6784234966_728713b4a3_b.jpg");
+#CUSP {
+  background-image: url("https://img3.cityrealty.com/neo/i/p/bvt/4730/building_base_image.jpg");
+  height: 300px;
   background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  width: 800px;
 }
-.Tandon {
+#Tandon {
   background-image: url("http://dz0zjhi21dz2t.cloudfront.net/media/80116/panoramas/10764/3072.jpg");
+  height: 300px;
   background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  width: 800px;
 }
 .year {
   float: right;
@@ -112,5 +120,9 @@ small {
   height: 10px;
 }
 #myMap {
-  height: 600px;
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  width: 800px;
 }

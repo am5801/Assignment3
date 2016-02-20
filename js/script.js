@@ -1,7 +1,3 @@
-$('div').on('click', function() {
-  $(this).toggleClass('show-description');
-});
-
 $('#black').click(function(){
   $('header').css('background-image',"url('http://mechanical-enterprises.com/wp-content/uploads/2013/05/chalkboard.jpg')");
 });
@@ -28,11 +24,46 @@ var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.p
 
 var map = L.map('myMap', {
   scrollWheelZoom: false,
-  center: [40.768058,-73.981891],
-  zoom: 11
+  center: [40.694225, -73.986401],
+  zoom: 17
 });
 
-map.addLayer(layer)
+//map.setZoom(17);
+map.addLayer(layer);
 
-var marker = L.marker([40.768058,-73.981891]).addTo(map);
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.")
+var myMapData = [
+  {
+    name: "Dartmouth College",
+    coord: [43.704929, -72.288704]
+  },
+  {
+    name: "NYU CUSP",
+    coord: [40.693086, -73.987477]
+  },
+  {
+    name: "NYU Tandon",
+    coord: [40.694225, -73.986401]
+  },
+]
+
+myMapData.forEach(function(element) {
+  var marker = L.marker(element.coord).addTo(map);
+  marker.bindPopup(element.name)
+});
+
+var panOptions = {
+  animate: true,
+  duration: 1
+}
+
+var hanover = [43.704929, -72.288704];
+var brooklyn = [40.694225, -73.986401];
+
+$('div').on('click', function() {
+  $(this).toggleClass('show-description');
+  if($(this).attr('id') == "Dartmouth") {
+    map.panTo(hanover, panOptions);
+  } else {
+    map.panTo(brooklyn, panOptions);
+  }
+});
